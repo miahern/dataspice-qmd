@@ -9,8 +9,70 @@ format:
 
 ### Describe your data
 
+The summary of the data is listed as:
+
+This dataset provides detailed information on various grocery items, including product details, supplier information, stock levels, reorder data, pricing, and sales performance. The data covers 990 products across various categories such as Grains & Pulses, Beverages, Fruits & Vegetables, and more. The dataset is useful for inventory management, sales analysis, and supply chain optimization.
+
+These are the steps I took to create a DATASPICE Repository
+
 ``` r
 library(dataspice)
 ```
 
-library(dataspice) create_spice(dir = "data") edit_creators() edit_access() edit_biblio() edit_attributes() write_spice() install.packages(c("jsonlite", "listviewer", "here", "magrittr", "pkgdown")) library(jsonlite) library(listviewer) library(here) library(magrittr) library(pkgdown) jsonlite::read_json(here::here("data", "metadata", "dataspice.json")) %\>% listviewer::jsonedit() dataspice::build_site(path = "data/metadata/dataspice.json", template_path = system.file("template.html5", package = "dataspice"), out_path = "docs/index.html" )
+![](activity%203_files/images/library(dataspice).png)
+
+``` r
+create_spice (dir = "data")
+```
+
+![](activity%203_files/images/create(spice).png)
+
+### Insert metadata
+
+``` r
+edit_creators()
+edit_access()
+edit_biblio()
+edit_attributes()
+write_spice()
+```
+
+![](activity%203_files/images/creators%20tab.png)
+
+![](activity%203_files/images/access%20tab.png)
+
+![](activity%203_files/images/attributes%20listed.png)
+
+### Install Packages needed for .html markup
+
+``` r
+install.packages(c("jsonlite", "listviewer", "here", "magrittr", "pkgdown"))
+```
+
+``` r
+library(jsonlite) library(listviewer) library(here) library(magrittr) library(pkgdown)
+```
+
+``` r
+jsonlite::read_json(here::here("data", "metadata", "dataspice.json")) %\>% listviewer::jsonedit()
+```
+
+``` r
+dataspice::build_site(path = "data/metadata/dataspice.json", template_path = system.file("template.html5", package = "dataspice"), out_path = "docs/index.html" )
+```
+
+![](activity%203_files/images/JSON%20data.png)
+
+### When data was created or published
+
+It doesn't have a created date listed but it does have an updated time code from 11 days ago- 2025/02/26
+
+### Title of Descriptive name used
+
+Grocery Inventory and Sales Dataset
+
+### Unique and Persistent Identifiers
+
+It has these tags: Business, Data Analytics, Data Visualization, Exploratory Data Analysis, Data Cleaning.
+
+This is the URL: https://www.kaggle.com/datasets/salahuddinahmedshuvo/grocery-inventory-and-sales-dataset/data

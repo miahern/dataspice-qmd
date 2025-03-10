@@ -112,8 +112,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="describe-your-data" class="level3">
 <h3 class="anchored" data-anchor-id="describe-your-data">Describe your data</h3>
+<p>The summary of the data is listed as:</p>
+<p>This dataset provides detailed information on various grocery items, including product details, supplier information, stock levels, reorder data, pricing, and sales performance. The data covers 990 products across various categories such as Grains &amp; Pulses, Beverages, Fruits &amp; Vegetables, and more. The dataset is useful for inventory management, sales analysis, and supply chain optimization.</p>
+<p>These are the steps I took to create a DATASPICE Repository</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dataspice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>library(dataspice) create_spice(dir = “data”) edit_creators() edit_access() edit_biblio() edit_attributes() write_spice() install.packages(c(“jsonlite”, “listviewer”, “here”, “magrittr”, “pkgdown”)) library(jsonlite) library(listviewer) library(here) library(magrittr) library(pkgdown) jsonlite::read_json(here::here(“data”, “metadata”, “dataspice.json”)) %&gt;% listviewer::jsonedit() dataspice::build_site(path = “data/metadata/dataspice.json”, template_path = system.file(“template.html5”, package = “dataspice”), out_path = “docs/index.html” )</p>
+<p><img src="activity%203_files/images/library(dataspice).png" class="img-fluid"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_spice</span> (<span class="at">dir =</span> <span class="st">"data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="activity%203_files/images/create(spice).png" class="img-fluid"></p>
+</section>
+<section id="insert-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="insert-metadata">Insert metadata</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">edit_creators</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">edit_access</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">edit_biblio</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">edit_attributes</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_spice</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="activity%203_files/images/creators%20tab.png" class="img-fluid"></p>
+<p><img src="activity%203_files/images/access%20tab.png" class="img-fluid"></p>
+<p><img src="activity%203_files/images/attributes%20listed.png" class="img-fluid"></p>
+</section>
+<section id="install-packages-needed-for-.html-markup" class="level3">
+<h3 class="anchored" data-anchor-id="install-packages-needed-for-.html-markup">Install Packages needed for .html markup</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"jsonlite"</span>, <span class="st">"listviewer"</span>, <span class="st">"here"</span>, <span class="st">"magrittr"</span>, <span class="st">"pkgdown"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite) <span class="fu">library</span>(listviewer) <span class="fu">library</span>(here) <span class="fu">library</span>(magrittr) <span class="fu">library</span>(pkgdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>jsonlite<span class="sc">::</span><span class="fu">read_json</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"metadata"</span>, <span class="st">"dataspice.json"</span>)) <span class="sc">%\&gt;%</span> listviewer<span class="sc">::</span><span class="fu">jsonedit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dataspice<span class="sc">::</span><span class="fu">build_site</span>(<span class="at">path =</span> <span class="st">"data/metadata/dataspice.json"</span>, <span class="at">template_path =</span> <span class="fu">system.file</span>(<span class="st">"template.html5"</span>, <span class="at">package =</span> <span class="st">"dataspice"</span>), <span class="at">out_path =</span> <span class="st">"docs/index.html"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="activity%203_files/images/JSON%20data.png" class="img-fluid"></p>
+</section>
+<section id="when-data-was-created-or-published" class="level3">
+<h3 class="anchored" data-anchor-id="when-data-was-created-or-published">When data was created or published</h3>
+<p>It doesn’t have a created date listed but it does have an updated time code from 11 days ago- 2025/02/26</p>
+</section>
+<section id="title-of-descriptive-name-used" class="level3">
+<h3 class="anchored" data-anchor-id="title-of-descriptive-name-used">Title of Descriptive name used</h3>
+<p>Grocery Inventory and Sales Dataset</p>
+</section>
+<section id="unique-and-persistent-identifiers" class="level3">
+<h3 class="anchored" data-anchor-id="unique-and-persistent-identifiers">Unique and Persistent Identifiers</h3>
+<p>It has these tags: Business, Data Analytics, Data Visualization, Exploratory Data Analysis, Data Cleaning.</p>
+<p>This is the URL: https://www.kaggle.com/datasets/salahuddinahmedshuvo/grocery-inventory-and-sales-dataset/data</p>
 </section>
 
 </main>
